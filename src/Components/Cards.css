@@ -1,0 +1,16 @@
+.card-group {
+    /* padding-right: 3px; */
+    padding-left: 342px !important;
+}
+.card-group {
+    display: flex important;
+    flex-flow: row wrap;
+    padding-top: 23px  !important;
+}
+.card-group .card {
+    flex:  -1.0 !important;
+    margin-bottom: 0;
+}
+.card-group.bgn {
+    padding-top: 23px !important;
+}

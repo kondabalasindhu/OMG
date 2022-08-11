@@ -1,0 +1,36 @@
+p.hero {
+    padding-left: 365px;
+    /* padding-bottom: 15px; */
+    /* padding-top: 15px; */
+    font-family: ui-monospace;
+    text-align: center !important;
+    font-size: 35px;
+}
+
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-red {
+    background-color: #70757ab3 !important;
+}
+a.logout.nav-link {
+    padding-right: 37px;
+    padding-left: 579px;
+}
+/* .imgrr {
+    margin-right: -131px;
+    margin-left: 214px;
+    margin-bottom: -165px;
+    margin-top: 0px;
+} */
+
+    button.s {
+        padding-top: 58px;
+    }
+   
+   .Addgrobut{
+    z-index: 1;
+
+    /* margin-left: -500px;s */
+   }
+  .logoMicro{
+    margin-left: 74px;
+  }

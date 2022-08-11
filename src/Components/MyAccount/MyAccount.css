@@ -1,0 +1,203 @@
+.ss{
+    /* position: absolute; */
+width: 590.19px;
+/* height: 76.27px; */
+left: 986.65px;
+top: 119.77px;
+
+background: #FAF8F8;
+border-radius: 48px;
+transform: rotate(179.64deg);
+}
+.red{
+    /* position: absolute; */
+width: 48px;
+height: 47px;
+left: 1026px;
+top: 64px;
+
+mix-blend-mode: color-dodge;
+}
+a.navbar-brand {
+    padding-right: 112px;
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-green {
+    /* background-color: #47af2cd9; */
+    padding-bottom: 25px;
+}
+.reds{
+    /* position: absolute; */
+width: 48px;
+height: 47px;
+left: 1026px;
+top: 64px;
+
+mix-blend-mode: color-dodge;
+}
+img.red {
+    position: absolute;
+    width: 113px;
+    height: 87px;
+    left: 1282px;
+    top: 25px;
+    /* background: url(icons8-shopping-basket.png);
+    background-blend-mode: multiply; */
+}
+.icon{
+    position: absolute;
+    width: 113px;
+    height: 107px;
+    left: 1282px;
+    top: 25px;
+    
+    background: url(../Images/basket\ .png);
+    background-blend-mode: multiply;
+}
+.card.rr {
+    /* position: absolute; */
+    width: 292px;
+    height: 308px;
+    left: 78px;
+    top: 36px;
+    background: #A0C0D2;
+
+}
+/* .SREE{ */
+    /* position: absolute; */
+    /* width: 223px;
+    height: 154px;
+    left: 654px;
+    top: 960px;
+    
+    background: #F0E687;
+    border-radius: 20px;
+} */
+hr {
+    transform: rotate(90deg);
+}
+p.MyAccount {
+    /* position: absolute; */
+    /* width: 306px; */
+    /* height: 66px; */
+    left: 28px;
+    top: 279px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    padding-left: 23px;
+}
+p.personal {
+    /* position: absolute; */
+    width: 306px;
+    /* height: 49px; */
+    left: 48px;
+    top: 351px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #51D523;
+    padding-left: 23px;
+    padding-left: 23px;
+}
+li.edit {
+    /* position: absolute; */
+    width: 207px;
+    /* height: 81px; */
+    left: 74px;
+    top: 401px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    
+}
+p.Mycard {
+    /* position: absolute; */
+    width: 306px;
+    height: 66px;
+    left: 28px;
+    top: 526px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    padding-left: 23px;
+}
+p.MyOrder {
+    /* position: absolute; */
+    /* width: 306px; */
+    height: 66px;
+    /* left: 28px; */
+    /* top: 592px; */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    padding-left: 23px;
+}
+p.help {
+    /* position: absolute; */
+    width: 306px;
+    height: 66px;
+    left: 28px;
+    top: 658px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    padding-left: 23px;
+}
+ul.ern {
+    padding-left: 71px;
+}
+.myAccountBody {
+    display: flex;
+}
+.divider {
+    position: absolute;
+    width: 950px;
+    height: 50px;
+    left: -210px;
+    top: 700px;
+    border: 1px solid #000000;
+    /* transform: rotate(89.73deg); */
+}
+.card{
+    
+position: absolute;
+width: 1352px;
+height: 92px;
+left: 42px;
+top: 442px;
+
+background: #39463E;
+}
+.UNIT{
+    position: absolute;
+width: 133px;
+height: 37px;
+left: 718px;
+top: 473px;
+
+font-family: 'Judson';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 29px;
+
+color: #FFFAFA;
+
+}

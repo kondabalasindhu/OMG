@@ -1,0 +1,16 @@
+.card-body {
+    background-color: #40d74045;
+}
+.grocery{
+    display: flex;
+    flex-direction: row;
+  height: 400px;
+}
+.subsection{
+    min-height: 200px;
+    width: 700px;
+
+}
+.cardbody{
+    width: 400px;
+}

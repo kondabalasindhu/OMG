@@ -1,0 +1,58 @@
+
+
+import axios from "axios";
+
+
+const BASE_URL = "http://10.81.4.193:2022"; // srikanth pc
+
+
+
+
+
+//post
+const LOGIN_API_URL = `${BASE_URL}/api/login`;
+
+//
+
+const REGISTRATION_API_URL = `${BASE_URL}/api/user/register`;
+const FORGET_API_URL = `${BASE_URL}/api/email`;
+const RESETPASSWORD_API_URL = `${BASE_URL}/api/validate`;
+const REG_OTP_API_URL= `${BASE_URL}/api/user/sendOtp`;
+//put
+
+//delete
+
+export function auth() {
+  const token = sessionStorage.getItem("Access_Token");
+  const config = {
+
+    
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return config;
+}
+
+export default  new (class ApiService {
+  login(data) {
+    return axios.post(LOGIN_API_URL, data);
+  }
+
+  registeration(data) {
+    return axios.post(REGISTRATION_API_URL, data);
+  }
+
+  forgetPwd(data) {
+    return axios.post(FORGET_API_URL, data);
+  }
+  ResetPassword(data) {
+    return axios.post(RESETPASSWORD_API_URL, data);
+  }
+  sendOtp(data){
+    return axios.post(REG_OTP_API_URL, data);
+  }
+
+})();
