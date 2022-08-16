@@ -17,7 +17,7 @@ const Styles = styled.div`
   }
   .navbar-brand {
     font-size: 1.4em;
-    color: #9FFFCB;
+    color: #9FFFCB;   
     &:hover { color: white; }
   }
   .form-center {

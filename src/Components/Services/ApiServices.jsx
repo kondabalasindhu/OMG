@@ -5,6 +5,11 @@ import axios from "axios";
 
 const BASE_URL = "http://10.81.4.193:2022"; // srikanth pc
 
+// const BASE_URL = "http://10.81.4.242:2022"; // pavan
+
+
+
+
 
 
 
@@ -15,9 +20,10 @@ const LOGIN_API_URL = `${BASE_URL}/api/login`;
 //
 
 const REGISTRATION_API_URL = `${BASE_URL}/api/user/register`;
-const FORGET_API_URL = `${BASE_URL}/api/email`;
+// const FORGOT_API_URL = `${BASE_URL}/smsForgot/forgot-password`;
+const FORGET_API_URL = `${BASE_URL}/api/user/sendOtp`;
 const RESETPASSWORD_API_URL = `${BASE_URL}/api/validate`;
-const REG_OTP_API_URL= `${BASE_URL}/api/user/sendOtp`;
+const REG_OTP_API_URL= `${BASE_URL}/api/sendOtp`;
 //put
 
 //delete
@@ -52,6 +58,7 @@ export default  new (class ApiService {
     return axios.post(RESETPASSWORD_API_URL, data);
   }
   sendOtp(data){
+   
     return axios.post(REG_OTP_API_URL, data);
   }
 

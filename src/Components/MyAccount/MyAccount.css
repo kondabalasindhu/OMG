@@ -177,11 +177,11 @@ ul.ern {
 }
 .card{
     
-position: absolute;
-width: 1352px;
+/* position: absolute; */
+/* width: 1352px; */
 height: 92px;
 left: 42px;
-top: 442px;
+top: 94px;
 
 background: #39463E;
 }
@@ -200,4 +200,17 @@ line-height: 29px;
 
 color: #FFFAFA;
 
+}
+p.first {
+    /* padding-right: 24px; */
+    padding-left: 305px;
+}
+p.details {
+    padding-left: 305px;
+}
+p.number {
+    padding-left: 305px;
+}
+p.online {
+    padding-left: 305px;
 }

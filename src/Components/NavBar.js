@@ -21,7 +21,6 @@ const NavBar = () => {
                         className="me-auto my-4 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
-                        
                     >
                         <Form className="d-flex">
                             <Form.Control
