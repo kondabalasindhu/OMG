@@ -13,7 +13,7 @@
 // export default MyCart
 
 import Table from 'react-bootstrap/Table';
-// import "./AddProducts.css";
+ import "./MyCart.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DataList from '../dataList/DataList';
@@ -28,7 +28,7 @@ function MyCart() {
 //   console.log(count)
   return (
     <>
-    <div class="tableFixHead">
+    <div className="tableFixHead">
     <table>
       <thead>
         <tr>
@@ -69,7 +69,7 @@ function MyCart() {
     </table>
  
   </div>
-  <button class="btn btn-success" >Add Row</button>
+  <button className="btn btn-success" >Add Row</button>
   </>
   );
 }

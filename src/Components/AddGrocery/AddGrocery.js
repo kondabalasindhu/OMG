@@ -7,11 +7,55 @@ import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
 import "./AddGrocery.css";
 import ReactVirtualizedTable from "../Tables/Tables";
+import ApiService from "../Services/ApiServices";
+import { useNavigate } from "react-router";
+import AddProducts from "../AddProducts/AddProducts";
+import ListProducts from "../ListProducts/ListProducts";
+
+
+
 
 function AddGrocery() {
     const [open, setOpen] = useState(false);
     const [state, setState] = useState(false);
     const [Data, setData] = useState(false);
+    const [datas, setDatas] = useState();
+    const [errors, setErrors] = useState(false)
+    const [status, setStatus] = useState(false);
+    const [showPro,setShowPro]=useState(false)
+
+
+
+const navigate=useNavigate()
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+   
+        setDatas((prevState) => ({
+          ...prevState,
+          [name]: value,
+        }));
+      };
+
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log("forget password caled");
+        console.log({datas});
+        ApiService.addgrocery(datas)
+          .then((res) => {
+            console.log(res.data);
+            setErrors(false);
+            alert("category added");
+            navigate("/");
+          })
+          .catch((error) => {
+            alert("something went wrong")
+            setErrors(true);
+            console.log(error);
+          });
+        setStatus(false);
+      };
+
     return (
         <div className="grocery">
 
@@ -25,7 +69,9 @@ function AddGrocery() {
                 }}
                     aria-controls="example-collapse-text"
                     aria-expanded={open}
-                > Add Categories     </Button>
+                > Add Categories    
+                
+                 </Button>
                 {" "}
                 <Button
                     onClick={() => { 
@@ -38,21 +84,24 @@ function AddGrocery() {
                 >
                     List of Categories  
                 </Button>
+                
                 {state&& <ReactVirtualizedTable/>}
                 <div className="subsection" >
                     <Collapse in={open} dimension="width">
                         <div id="example-collapse-text">
                             <Card body className="cardbody"  
                             >
-                                <label> Category name</label>
+                                <label for="catName"> Category name</label>
                                 <input
                                     type="text"
+                                    name="catName"
                                     className="form-control mt-1"
                                     placeholder="Enter text"
+                                    onChange={handleChange}
 
                                 />
                                 <p className="forgot-password text-right mt-2">
-                                    <Button className="btn-signup" type="submit">
+                                    <Button className="btn-signup" type="submit" onClick={handleSubmit}>
                                         submit
                                     </Button>{" "}
                                 </p>
@@ -68,26 +117,32 @@ function AddGrocery() {
                 <div className="category">
                 <Button
                    onClick={() => {
-                    // setState(!state);
+                    setState(!state);
                     setData(!Data);
-                    setState(false);
+                    // setState(false);
+                    setShowPro(true)
                 }}
                     aria-controls="example-collapse-text"
                     aria-expanded={Data}
                 > Add Products   </Button>
+               
+                
                 {" "}
+                
                 <Button
                     onClick={() => { 
                         setState(!state)
-                        setOpen(false);     
+                        setOpen(false);  
+                           
                        
                     }}
                     aria-controls="example-collapse-text"
-                    aria-expanded={state}
+                    aria-expanded={!state}
                 >
                     List of Products
                 </Button>
-                {state&& <ReactVirtualizedTable/>}
+                {!state&& <AddProducts/>}
+                {state&& <ListProducts/>}
                 <div className="subsection" >
                     <Collapse in={open} dimension="width">
                         <div id="example-collapse-text">

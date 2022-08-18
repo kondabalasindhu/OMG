@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 const BASE_URL = "http://10.81.4.193:2022"; // srikanth pc
-
+  
 // const BASE_URL = "http://10.81.4.242:2022"; // pavan
 
 
@@ -22,8 +22,9 @@ const LOGIN_API_URL = `${BASE_URL}/api/login`;
 const REGISTRATION_API_URL = `${BASE_URL}/api/user/register`;
 // const FORGOT_API_URL = `${BASE_URL}/smsForgot/forgot-password`;
 const FORGET_API_URL = `${BASE_URL}/api/user/sendOtp`;
-const RESETPASSWORD_API_URL = `${BASE_URL}/api/validate`;
+const RESETPASSWORD_API_URL = `${BASE_URL}/api/verify`;
 const REG_OTP_API_URL= `${BASE_URL}/api/sendOtp`;
+const ADDGROCERY_API_URL= `${BASE_URL}/api/admin/addCategory`;
 //put
 
 //delete
@@ -60,6 +61,9 @@ export default  new (class ApiService {
   sendOtp(data){
    
     return axios.post(REG_OTP_API_URL, data);
+  }
+  addgrocery(data){
+    return axios.post(ADDGROCERY_API_URL,data,auth());
   }
 
 })();

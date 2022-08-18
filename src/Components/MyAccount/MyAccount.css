@@ -175,16 +175,7 @@ ul.ern {
     border: 1px solid #000000;
     /* transform: rotate(89.73deg); */
 }
-.card{
-    
-/* position: absolute; */
-/* width: 1352px; */
-height: 92px;
-left: 42px;
-top: 94px;
 
-background: #39463E;
-}
 .UNIT{
     position: absolute;
 width: 133px;
@@ -213,4 +204,79 @@ p.number {
 }
 p.online {
     padding-left: 305px;
+}
+.card {
+    /* position: absolute; */
+    /* width: 1352px; */
+    /* height: 92px; */
+    /* left: 42px; */
+    /* top: 94px; */
+    background: #39463E;
+}
+span.personal {
+    /* position: absolute; */
+    /* width: 306px; */
+    /* height: 49px; */
+    /* left: 48px; */
+    /* top: 351px; */
+    font-family: 'Inter';
+    /* font-style: normal; */
+    /* font-weight: 300; */
+    font-size: 24px;
+    /* line-height: 29px; */
+    color: #51D523;
+}
+p.reddy {
+    /* position: absolute; */
+    width: 1352px;
+    height: 573px;
+    left: 42px;
+    top: 525px;
+    background: #D9D9D9;
+}
+/* p.reddy2{
+    box-sizing: border-box;
+
+position: absolute;
+width: 226.3px;
+height: 48.59px;
+left: 42.08px;
+top: 1134.29px;
+
+background: #D9D9D9;
+border: 1px solid #51D523;
+transform: rotate(0.07deg);
+} */
+p.reddy2 {
+    position: absolute;
+    width: 777.86px;
+    height: 530.37px;
+    left: 611.68px;
+    top: 1109px;
+    background: rgba(194, 237, 218, 0.49);
+    /* border: 3px solid rgba(81, 213, 35, 0.39); */
+    border-radius: 25px;
+    transform: rotate(0.07deg);
+    /* padding-top: 59px; */
+    margin-top: -443px;
+    padding-bottom: -3px;
+}
+img.micro {
+    /* position: absolute; */
+    width: 250px;
+    height: 80px;
+    left: 38px;
+    top: 47px;
+    background: #92A332;
+    border-radius: 40px;
+}
+input.me-4.ss.form-control {
+    /* position: absolute; */
+    width: 500px;
+    height: 51.91px;
+    left: 921.31px;
+    top: 109.91px;
+    background: rgba(146, 163, 50, 0.39);
+    border-radius: 48px;
+    transform: rotate(179.64deg);
 }

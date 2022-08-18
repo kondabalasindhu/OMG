@@ -26,7 +26,7 @@ const DataList = () => {
 <option value="audi">4 kg</option> */}
 </select>
     </td>
-    <td class="btn btn-success">add</td>
+    <td className="btn btn-success">add</td>
   </tr>
   )
 }

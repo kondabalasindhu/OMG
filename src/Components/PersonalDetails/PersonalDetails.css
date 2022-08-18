@@ -22,6 +22,7 @@ p.online {
     font-weight: 400;
     font-size: 36px;
     line-height: 43px;
+    padding-top: 19px;
     color: #545454;
 }
 p.number {
@@ -36,4 +37,24 @@ p.number {
     font-size: 36px;
     line-height: 42px;
     color: #000000;
+}
+p.first {
+    /* position: absolute; */
+    width: 1025px;
+    height: 0px;
+    /* left: 357px; */
+    /* top: 336px; */
+    border: 1px solid #000000;
+    transform: rotate(-0.11deg);
+}
+p.raj{
+    box-sizing: border-box;
+
+/* position: absolute; */
+width: 523px;
+height: 258px;
+left: 387px;
+top: 442px;
+
+border: 0.5px solid #000000;
 }

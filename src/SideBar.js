@@ -109,7 +109,7 @@ const NavIcon = styled.div`
 
 export default class Sidebar extends React.Component {
     render() {
-        return (
+        return ( 
             <RouterSideNav></RouterSideNav>
         );
     }

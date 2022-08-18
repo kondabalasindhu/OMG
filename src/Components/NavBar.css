@@ -19,3 +19,25 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-green {
     font-size: 16px;
     margin: 4px 2px;
   }
+  a.nav-link {
+    padding-right: 70px !important;
+    margin-left: 575px !important;
+    /* padding-left: 63px; */
+}
+input.me-4.form-control {
+    PADDING-RIGHT: 188PX;
+    MARGIN-RIGHT: 72PX;
+    /* margin-left: 224px; */
+}
+a.navbar-brand {
+    padding-left: 73px;
+}
+div#navbarScroll {
+    padding-right: 33px;
+    padding-left: 249px;
+}
+a.nav-link {
+    /* padding-right: 70px !important; */
+    margin-left: 349px !important;
+    /* padding-left: 63px; */
+}

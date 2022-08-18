@@ -7,6 +7,7 @@ import Cards from './Cards';
 
 import Carsouel from './Carsouel';
 import NavBar from './NavBar';
+import "./NavigationBar.css";
 
 
 const Styles = styled.div`
@@ -149,9 +150,9 @@ export const NavigationBar =
       <>
         <NavBar />
         <div>
-          <button class="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Categories</button>
-          <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">About Us</button>
-          <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">Contact us</button>
+          <button className="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Categories</button>
+          <button className="btn btn-success  rr me-md-2 " shape="rounded-0" type="button">About Us</button>
+          <button className="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Contact us</button>
           </div>
         <Carsouel />
         <Cards />

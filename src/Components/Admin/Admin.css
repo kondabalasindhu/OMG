@@ -13,13 +13,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-red {
 }
 a.logout.nav-link {
     padding-right: 37px;
-    padding-left: 579px;
+    
 }
 /* .imgrr {
-    margin-right: -131px;
-    margin-left: 214px;
-    margin-bottom: -165px;
-    margin-top: 0px;
+   width: 100%;
 } */
 
     button.s {
@@ -27,10 +24,22 @@ a.logout.nav-link {
     }
    
    .Addgrobut{
-    z-index: 1;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 50px;
 
     /* margin-left: -500px;s */
    }
   .logoMicro{
     margin-left: 74px;
   }
+  p.hero {
+    /* padding-left: 365px; */
+    /* padding-bottom: 15px; */
+    padding-top: 15px;
+ 
+    width: 500px;
+    font-family: ui-monospace;
+    text-align: center !important;
+    font-size: 35px;
+}

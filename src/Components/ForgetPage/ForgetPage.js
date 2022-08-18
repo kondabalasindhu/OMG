@@ -1,39 +1,38 @@
-import './ForgetPage.css';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import "./ForgetPage.css";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 import test18 from "../test18.png";
 import test19 from "../test19.png";
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import ApiService from "../Services/ApiServices";
 import { useNavigate } from "react-router";
 
-
-
-
-
 function ForgetPage() {
-  const [phoNu,setPhoNu] = useState();
-  const [msg,setMsg]= useState("");
+  const [phoNu, setPhoNu] = useState();
+  const [msg, setMsg] = useState("");
   const [status, setStatus] = useState(false);
   const [password, setPassword] = useState(true);
   const [errors, setErrors] = useState(false);
+  const [data, setData] = useState();
   const navigate = useNavigate();
 
-
   const handleChange = (e) => {
-    setPhoNu(e.target.value);
-    // e.target.phoNu ? setStatus(false) : setStatus(true);
+    const { name, value } = e.target;
+
+    setData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
-
-  const handleOtp=(e)=>{
+  const handleOtp = (e) => {
     e.preventDefault();
     setMsg("");
-   
-    ApiService.sendOtp({"phoneNumber":phoNu})
+
+    ApiService.sendOtp({ phoneNumber: phoNu })
       .then((res) => {
         // console.log(res.data);
         alert("Otp sent");
@@ -43,18 +42,17 @@ function ForgetPage() {
       .catch((error) => {
         console.log(error);
         setStatus(false);
-        setMsg(error.response?.data?.errorMessage?error.response.data.errorMessage:error.message);
-        
+        setMsg(
+          error.response?.data?.errorMessage
+            ? error.response.data.errorMessage
+            : error.message
+        );
       });
-  }
-
-
-
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log("forget password caled");
-    let data = {password : password };
     console.log(data);
     ApiService.ResetPassword(data)
       .then((res) => {
@@ -71,13 +69,12 @@ function ForgetPage() {
   };
   return (
     <div className="Auth-form-container">
-<img src={test19}
-                     />
+      <img src={test19} />
       <form className="Auth-form">
         <div className="Auth-form-content">
           <Row className="mb-3">
             <h3 className="Auth-form-title">Forgot Password</h3>
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               <Form.Label htmlFor="phone number">Phone Number</Form.Label>
               <Form.Control
                 id="phone number"
@@ -85,53 +82,59 @@ function ForgetPage() {
                 message="please enter correct number"
                 name="phoneNo"
                 title="enter phone number like +919999999999"
-                placeholder='enter phoneNumber'
-                onChange={handleChange}
+                placeholder="enter phoneNumber"
+                onChange= {(e)=>setPhoNu(e.target.value)}
               />
-              <p className='text-danger'><b>{msg}</b></p>
+              <p className="text-danger">
+                <b>{msg}</b>
+              </p>
             </Form.Group>
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               {/* <Form.Label>Getotp</Form.Label> */}
               <br></br>
-              <Button type="submit"className="btn-signup btn-success"  disabled={status} onClick={handleOtp}>
+              <Button
+                type="submit"
+                className="btn-signup btn-success"
+                disabled={status}
+                onClick={handleOtp}
+              >
                 Getotp
               </Button>
               {/* <Form.Control type="password" placeholder="Enter confirm password" /> */}
             </Form.Group>
-
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               <Form.Label htmlFor="phone number">OTP</Form.Label>
               <Form.Control
                 id="otp"
                 type="text"
                 message="please Enter Valid OTP here"
-                name="UName"
+                name="otp"
                 title="enter Valid OTP here"
-                placeholder='enterValid OTP here'
+                placeholder="enterValid OTP here"
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               {/* <Form.Label>Confirm Password</Form.Label> */}
               {/* <Form.Control type="button" placeholder="Enter confirm password" /> */}
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               <Form.Label htmlFor="New Password">New Password</Form.Label>
               <Form.Control
                 id="New Password"
                 type="password"
                 message="please Enter New Password"
-                name="UName"
+                name="newPassword"
                 title="enterNew Password"
-                placeholder='enter New Password'
-                onChange={(e) => setPassword(e.target.value)}
+                placeholder="enter New Password"
+                onChange= {handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               {/* <Form.Label>Confirm Password</Form.Label> */}
               {/* <Form.Control type="button" placeholder="Enter confirm password" /> */}
             </Form.Group>
@@ -150,30 +153,27 @@ function ForgetPage() {
             </Form.Group>
             <Form.Group as={Col} >
               {/* <Form.Label>Confirm Password</Form.Label> */}
-              {/* <Form.Control type="button" placeholder="Enter confirm password" /> */}
-            {/* </Form.Group>
-          // </Row> */} 
+          {/* <Form.Control type="button" placeholder="Enter confirm password" /> */}
+          {/* </Form.Group>
+          // </Row> */}
           {/* <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Login
             </button>
           </div> */}
           <p className="forgot-password text-right mt-2">
-            <Button className="btn-signup" type="submit"onClick={handleSubmit} >
+            <Button className="btn-signup" type="submit" onClick={handleSubmit}>
               submit
             </Button>{" "}
-
-            <Button as= {Link} to="/" variant="danger">
+            <Button as={Link} to="/" variant="danger">
               Cancel
             </Button>
           </p>
-
         </div>
       </form>
-      <img src={test18}
-                    />
+      <img src={test18} />
     </div>
-  )
+  );
 }
 
 export default ForgetPage;

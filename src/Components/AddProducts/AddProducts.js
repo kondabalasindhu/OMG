@@ -14,7 +14,7 @@ setCount((PrevState)=>PrevState=count+1);
   console.log(count)
   return (
     <>
-    <div class="tableFixHead">
+    <div className="tableFixHead">
     <table>
       <thead>
         <tr>
@@ -55,7 +55,7 @@ setCount((PrevState)=>PrevState=count+1);
     </table>
  
   </div>
-  <button class="btn btn-success" onClick={handleAdd}>Add Row</button>
+  <button className="btn btn-success" onClick={handleAdd}>Add Row</button>
   </>
   );
 }

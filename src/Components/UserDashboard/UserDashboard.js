@@ -51,61 +51,61 @@ const UserDashboard = () => {
 
       </Navbar>
       <div>
-        <button class="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Categories</button>
-        <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">About Us</button>
-        <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">Contact us</button>
+        <button className="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Categories</button>
+        <button className="btn btn-success rr me-md-2 " shape="rounded-0" type="button">About Us</button>
+        <button className="btn btn-success rr     me-md-2 " shape="rounded-0" type="button">Contact us</button>
       </div>
       <Carsouel />
       {/* <Cards /> */}
-      <div class="row mb-4 card-items ">
-        <div class="col-sm-3 text-center">
-          <div class="card ">
-            <div class="sticker">New</div>
+      <div className="row mb-4 card-items ">
+        <div className="col-sm-3 text-center">
+          <div className="card ">
+            <div className="sticker">New</div>
             <img src="https://images.newscientist.com/wp-content/uploads/2021/07/19142457/20-july_tomato-nervous-system.jpg" alt="" />
           </div>
           <p>Text placeholder</p>
         </div>
 
-        <div class="col-sm-3 text-center">
-          <div class="card">
-            <div class="sticker">Old</div>
+        <div className="col-sm-3 text-center">
+          <div className="card">
+            <div className="sticker">Old</div>
             <img src="https://images.newscientist.com/wp-content/uploads/2021/07/19142457/20-july_tomato-nervous-system.jpg" alt="" />
           </div>
           <p>Text placeholder</p>
         </div>
 
-        <div class="col-sm-3 text-center">
-          <div class="card">
-            <div class="sticker">Old</div>
+        <div className="col-sm-3 text-center">
+          <div className="card">
+            <div className="sticker">Old</div>
             <img src="https://images.newscientist.com/wp-content/uploads/2021/07/19142457/20-july_tomato-nervous-system.jpg" alt="" />
           </div>
           <p>Text placeholder</p>
         </div>
 
-        <div class="col-sm-3 text-center">
-          <div class="card">
-            <div class="sticker">Old</div>
+        <div className="col-sm-3 text-center">
+          <div className="card">
+            <div className="sticker">Old</div>
             <img src="https://images.newscientist.com/wp-content/uploads/2021/07/19142457/20-july_tomato-nervous-system.jpg" alt="" />
           </div>
           <p>Text placeholder</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6 col-sm-8 col-xs-12">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div className="row">
+        <div className="col-md-6 col-sm-8 col-xs-12">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
-        <div class="col-md- 3 col-sm-4 col-xs-12">
-          <div class="card ">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div className="col-md- 3 col-sm-4 col-xs-12">
+          <div className="card ">
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
