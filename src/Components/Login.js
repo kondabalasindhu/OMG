@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import './Login.css';
 import test6 from "./test6.png";
 import test from "./test.png"; 
@@ -15,6 +15,8 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(false);
+  const ADMIN="ADMIN"
+  const USER="USER"
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,11 +27,14 @@ function Login() {
         sessionStorage.setItem("Access_Token", res.data.token.jwtToken);
         // const user = localStorage.getItem('user')
         const username = jwt(res.data.token.jwtToken).sub;
-        console.log(username);
+        console.log(res.data);
         sessionStorage.setItem("username", username);
         setErrors(false);
         alert(`Login Successful `);
-        navigate("/");
+        // navigate("/");
+        let path = res.data.role==ADMIN?"/admin":"/"
+        navigate(path)
+
       })
       .catch((error) => {
         console.log(error);
@@ -38,8 +43,8 @@ function Login() {
   };
   return (                    
 <div className="Auth-form-container">
-<img  src={test6} className="imghh"
-                    OMG />
+<img  src={test6} alt="image"className="imghh"
+                     />
 <form className="Auth-form" onSubmit={handleSubmit}>
   <div className="Auth-form-content">
     <h3 className="Auth-form-title">Member Login</h3>
@@ -85,8 +90,8 @@ function Login() {
           </Link>         
   </div>
 </form>
-<img  src={test} className="imghh"
-                    OMG />
+<img  src={test} alt="image"className="imghh"
+                    />
 </div>
 )
 }

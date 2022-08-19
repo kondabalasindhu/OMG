@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import Cards from './Cards';
@@ -8,6 +8,8 @@ import Cards from './Cards';
 import Carsouel from './Carsouel';
 import NavBar from './NavBar';
 import "./NavigationBar.css";
+import Product from './Product';
+import ApiServices from './Services/ApiServices';
 
 
 const Styles = styled.div`
@@ -51,101 +53,17 @@ const Styles = styled.div`
     position: inherit !important;
     
 }
-
-
 `;
-
-// export const NavigationBar = () => (
-//   <Styles>
-//     {/* <Navbar expand="lg">
-//       <div className="omg">
-//         <Navbar.Brand href="/">OMG</Navbar.Brand></div>
-//       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//       <Form className="form-center">
-//         <FormControl type="text" placeholder="Search" className="" />
-//       </Form>
-//       <Navbar.Collapse id="basic-navbar-nav">
-//         <Nav className="ml-auto">
-//           <Nav.Item><Nav.Link to="/login">login</Nav.Link></Nav.Item>
-
-//           {/* <button type="button" class="btn btn-outline-dark me-2" Link className="NavLink" to="/login">Login</button>
-//           <button type="button" class="btn btn-warning">Cart</button>
-//           <Link className=" navLink" to="/login">Login</Link> */}
-//           {/* <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item> */}
-//         </Nav>
-//       </Navbar.Collapse>
-//     </Navbar> */}
-
-//     <button class="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Categories</button>
-//     <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">About Us</button>
-//     <button class="btn btn-success me-md-2 " shape="rounded-0" type="button">Contact us</button>
-
-
-//     {/* );
-//   */}
-
-//     {/* function BasicExample() { */}
-
-
-
-//     <CardGroup>
-//       <Card>
-//         <Card.Img variant="top" src={test5} />
-//         <Card.Body>
-//           <Card.Title>fRUITS</Card.Title>
-//           <Card.Text>
-//             This is a wider card with supporting text below as a natural lead-in
-//             to additional content. This content is a little bit longer.
-//           </Card.Text>
-//         </Card.Body>
-//         <Card.Footer>
-//           {/* <small className="text-muted">Last updated 3 mins ago</small> */}
-
-//         </Card.Footer>
-//       </Card>
-//       <Card>
-//         <Card.Img variant="top" src={test2} />
-//         <Card.Body>
-//           <Card.Title>vegtables</Card.Title>
-//           <Card.Text>
-//             This card has supporting text below as a natural lead-in to
-//             additional content.{' '}
-//           </Card.Text>
-//         </Card.Body>
-//         <Card.Footer>
-//           {/* <small className="text-muted">Last updated 3 mins ago</small> */}
-//         </Card.Footer>
-//       </Card>
-//       <Card>
-//         <Card.Img variant="top" src={test2} />
-//         <Card.Body>
-//           <Card.Title>Fruits</Card.Title>
-//           <Card.Text>
-//             This is a wider card with supporting text below as a natural lead-in
-//             to additional content. This card has even longer content than the
-//             first to show that equal height action.
-//           </Card.Text>
-//         </Card.Body>
-//         <Card.Footer>
-//           {/* <small className="text-muted">Last updated 3 mins ago</small> */}
-//         </Card.Footer>
-//       </Card>
-//     </CardGroup>
-
-
-//     export default GroupExample;
-
-
-
-//     {/* export default BasicExample;
-
-// export default IndividualIntervalsExample; */}
-//   </>
-// )
-
 
 export const NavigationBar =
   () => {
+    const [productsListData,setProductsListData]=useState([])
+    useEffect(()=>{
+      ApiServices.productsList().then(res=>{
+        console.log(res.data)
+        setProductsListData(res.data)
+      })
+    },[])
     return (
       <>
         <NavBar />
@@ -155,7 +73,11 @@ export const NavigationBar =
           <button className="btn btn-success rr me-md-2 " shape="rounded-0" type="button">Contact us</button>
           </div>
         <Carsouel />
-        <Cards />
+        <div className="products">
+
+          {productsListData.map(it=><Product key={it.prodId} data={it}/>)}
+        </div>
+        {/* <Cards /> */}
       </>
     )
 

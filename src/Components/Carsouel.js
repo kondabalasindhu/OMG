@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel } from 'react-bootstrap'
 import test4 from "./test4.jpg";
 import test5 from "./test5.jpg";
-import test2 from "./test2.jpg";
+// import test2 from "./test2.jpg";
 const Carsouel = () => {
   return (
     

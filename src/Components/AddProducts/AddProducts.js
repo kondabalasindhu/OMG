@@ -1,4 +1,4 @@
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
 import "./AddProducts.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';

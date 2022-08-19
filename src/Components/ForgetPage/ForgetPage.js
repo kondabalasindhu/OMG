@@ -14,7 +14,7 @@ function ForgetPage() {
   const [phoNu, setPhoNu] = useState();
   const [msg, setMsg] = useState("");
   const [status, setStatus] = useState(false);
-  const [password, setPassword] = useState(true);
+  // const [password, setPassword] = useState(true);
   const [errors, setErrors] = useState(false);
   const [data, setData] = useState();
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ function ForgetPage() {
   };
   return (
     <div className="Auth-form-container">
-      <img src={test19} />
+      <img src={test19} alt="fruit" />
       <form className="Auth-form">
         <div className="Auth-form-content">
           <Row className="mb-3">
@@ -171,7 +171,7 @@ function ForgetPage() {
           </p>
         </div>
       </form>
-      <img src={test18} />
+      <img src={test18}  alt="fruit"/>
     </div>
   );
 }
