@@ -14,3 +14,12 @@
 .card-group.bgn {
     padding-top: 23px !important;
 }
+.card{
+    /* position: absolute; */
+width: 238px;
+height: 240px;
+left: 120px;
+top: 600px;
+
+background: #A0C0D2;
+}

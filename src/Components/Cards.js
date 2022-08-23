@@ -8,7 +8,7 @@ const Cards = () => {
   return (
     <>
     <CardGroup >
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '50%' }}>
       <Card.Img variant="top" src={test4} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -19,7 +19,7 @@ const Cards = () => {
        <Button variant="primary">Go somewhere</Button>
      </Card.Body>
     </Card> 
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '50%' }}>
       <Card.Img variant="top" src={test4} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -30,7 +30,7 @@ const Cards = () => {
        <Button variant="primary">Go somewhere</Button> 
       </Card.Body>
     </Card> 
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '50%' }}>
       <Card.Img variant="top" src={test5} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -41,7 +41,7 @@ const Cards = () => {
        <Button variant="primary">Go somewhere</Button> 
       </Card.Body>
     </Card> 
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '50%' }}>
       <Card.Img variant="top" src={test4} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -52,7 +52,7 @@ const Cards = () => {
        <Button variant="primary">Go somewhere</Button> 
       </Card.Body>
     </Card> 
-    <Card style={{ width: '10rem' }}>
+    <Card style={{ width: '50%' }}>
       <Card.Img variant="top" src={test5} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

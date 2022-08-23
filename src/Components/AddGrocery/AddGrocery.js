@@ -19,7 +19,9 @@ function AddGrocery() {
   const [datas, setDatas] = useState();
   const [errors, setErrors] = useState(false);
   const [status, setStatus] = useState(false);
-  const [showPro, setShowPro] = useState(false);
+
+
+  
 
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -33,7 +35,6 @@ function AddGrocery() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("forget password caled");
     console.log({ datas });
     ApiService.addgrocery(datas)
       .then((res) => {
@@ -116,7 +117,7 @@ function AddGrocery() {
               setState(!state);
               setData(!Data);
               // setState(false);
-              setShowPro(true);
+              // setShowPro(true);
             }}
             aria-controls="example-collapse-text"
             aria-expanded={Data}

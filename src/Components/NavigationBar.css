@@ -10,5 +10,6 @@ button.btn.btn-success.rr.me-md-2 {
   display:flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: aquamarine;
+  background-color: rgb(39, 223, 110);
+  width: 100%;
 }
