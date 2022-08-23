@@ -11,7 +11,7 @@ const DataList = () => {
   const [qty, setqty] = useState(0);
   // const [status, setstatus] = useState("");
   const [categoriesEntity, setcategoriesEntity] = useState({});
-  const [datas, setDatas] = useState();
+  const [datas, setDatas] = useState({});
   const [errors, setErrors] = useState(false);
   const [status, setStatus] = useState(false);
 
@@ -30,7 +30,7 @@ const DataList = () => {
 
     categoriesEntity: categoriesEntity,
   };
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     ApiServices.getCategory()
@@ -43,20 +43,21 @@ const DataList = () => {
 
 
 
-
-
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+console.log(e.target.value);
+console.log(e.target.name)
+// alert("called");
     setDatas((prevState) => ({
       ...prevState,
       [name]: value,
+      
     }));
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("forget password caled");
+ 
     console.log({ datas });
     ApiServices.addproducts(datas)
       .then((res) => {
@@ -66,7 +67,8 @@ const DataList = () => {
         // navigate("/");
       })
       .catch((error) => {
-        alert("something went wrong");
+        alert("something went wrong ");
+
         setErrors(true);
         console.log(error);
       });
@@ -75,13 +77,18 @@ const DataList = () => {
 
   return (
     <tr className="chocolate">
-      <select name="category" id="cars">
+      <select name="category" id="cars" onChange={handleChange}>
         {categorylist.map((it) => (
-          <option value="volvo"  onChange={handleChange}>{it.catName}</option>
+          <option value={it.catName} 
+           >
+
+            {it.catName}</option>
         ))}
       </select>
       <td>
-        <input placeholder="Apple"  onChange={handleChange} type="text" />
+        <input placeholder="Apple"  
+        name="prodName"
+        onChange={handleChange} type="text" />
       </td>
       <td>
         <select name="qty"  onChange={handleChange}id="cars">
@@ -94,23 +101,22 @@ const DataList = () => {
       <td>
         <input
           placeholder="199.00"
-          
+          name="price"
           type="number"
-          onChange={(e) => setprice(e.target.value)}
+          onChange={handleChange}
         />
       </td>
 
       <td>
-        <input type="text"  onChange={handleChange}/>
+        <input type="text" 
+        name="imageUrl" onChange={handleChange}/>
       </td>
       <td>
-        <select name="cars" id="cars"  onChange={handleChange}>
-          <option value="volvo">Available</option>
-          <option value="saab">not Available</option>
-          {/* <option value="opel">3 kg</option>
-
-
-<option value="audi">4 kg</option> */}
+        <select name="status" id="cars"
+          onChange={handleChange}>
+          <option value="available">Available</option>
+          <option value="not available">not Available</option>
+          
         </select>
       </td>
       <td className="btn btn-success" onClick={handleSubmit}>

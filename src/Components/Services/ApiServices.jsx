@@ -65,7 +65,7 @@ export default new (class ApiService {
     return axios.get(PRODUCTS_LIST);
   }
   addproducts() {
-    return axios.post(ADD_PRODUCTS);
+    return axios.post(ADD_PRODUCTS,auth());
   }
   getCategory() {
     return axios.get(ADD_CATEGORY, auth());
