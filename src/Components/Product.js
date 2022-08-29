@@ -9,7 +9,7 @@ const Product = (props) => {
   console.log(props)
   return (
     <Card className="cardss card-deck" >
-      <Card.Img variant="top" className="can"src={props.data.imageUrl} />
+      <Card.Img variant="top" className="card-image"src={props.data.imageUrl} />
       <Card.Body>
         <Card.Title>{props.data.prodName}</Card.Title>
        <Card.Subtitle className="mb-4 text-muted">

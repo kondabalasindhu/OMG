@@ -3,15 +3,26 @@ import "./ListProducts.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DataList from '../dataList/DataList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ApiServices from "../Services/ApiServices";
   
 
 function ListProducts() {
-const [count,setCount]=useState(1);
-  const handleAdd=()=>{
-setCount((PrevState)=>PrevState=count+1);
-  }
-  console.log(count)
+const [data,setData]=useState({});
+//   const handleAdd=()=>{
+// setCount((PrevState)=>PrevState=count+1);
+//   }
+//   console.log(count)
+useEffect(() => {
+  ApiServices.listofproducts()
+    .then((res) => {
+      console.log(res.data);
+      setData(res.data);
+    })
+    .catch((err) => alert(err.message));
+}, []);
+
+
   return (
     <>
     <div className="tableFixHead">
@@ -19,23 +30,11 @@ setCount((PrevState)=>PrevState=count+1);
       <thead>
         <tr>
           <th>
-          <Dropdown>
-        <Dropdown.Toggle variant="success">
-        category Name
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item href="#">
-            fruits
-          </Dropdown.Item>
-          <Dropdown.Item href="#">
-         fruits
-          </Dropdown.Item>
-          <Dropdown.Item href="#">
-          fruits
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+          Category name
           </th>
+          <th>By category</th>
+          <th>category id</th>
+          <th>product id</th>
           <th>product Name</th>
           <th>Quantity</th>
           <th>price</th>
@@ -44,16 +43,34 @@ setCount((PrevState)=>PrevState=count+1);
           <th>remarks</th>
         </tr>
       </thead>
-      <tbody>
+      {/* <tbody>
        
        {count>0?<DataList/>:""} 
        {count>1?<DataList/>:""} 
        {count>2?<DataList/>:""}
+      </tbody> */}
+      <tbody>
+        
+{
+  data.map((it) => 
+    {
+<td>
+  {
+    it.prodId
+  }
+</td>
+    }
+  )
+}
+  
+
+
+
       </tbody>
     </table>
  
   </div>
-  <button className="btn btn-success" onClick={handleAdd}>Add Row</button>
+  {/* <button className="btn btn-success" onClick={handleAdd}>Add Row</button> */}
   </>
   );
 }

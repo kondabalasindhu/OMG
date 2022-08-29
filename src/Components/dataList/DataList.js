@@ -15,21 +15,21 @@ const DataList = () => {
   const [errors, setErrors] = useState(false);
   const [status, setStatus] = useState(false);
 
-  const data = {
-    prodName: showPro,
+  // const data = {
+  //   prodName: showPro,
 
-    price: prodName,
+  //   price: prodName,
 
-    imageUrl: imageUrl,
+  //   imageUrl: imageUrl,
 
-    AddOnDate: AddOnDate,
+  //   AddOnDate: AddOnDate,
 
-    qty: qty,
+  //   qty: qty,
 
-    status: status,
+  //   status: status,
 
-    categoriesEntity: categoriesEntity,
-  };
+  //   categoriesEntity: categoriesEntity,
+  // };
   // console.log(data);
 
   useEffect(() => {
@@ -57,8 +57,7 @@ console.log(e.target.name)
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
-    console.log({ datas });
+    console.log( datas );
     ApiServices.addproducts(datas)
       .then((res) => {
         console.log(res.data);
@@ -67,8 +66,7 @@ console.log(e.target.name)
         // navigate("/");
       })
       .catch((error) => {
-        alert("something went wrong ");
-
+        // alert("something went wrong ");
         setErrors(true);
         console.log(error);
       });
@@ -76,10 +74,22 @@ console.log(e.target.name)
   };
 
   return (
+    // <form onSubmit={handleSubmit}>
     <tr className="chocolate">
-      <select name="category" id="cars" onChange={handleChange}>
+      <select name="catName" id="cars" required onChange={(e)=>{
+        const { name, value } = e.target;
+        setDatas((prevState) => ({
+      ...prevState,
+      
+        "categoriesEntity": {
+          [name]: value,
+      }
+      
+      
+    }));}}>
+       <option value="">select</option>  
         {categorylist.map((it) => (
-          <option value={it.catName} 
+          <option value={it.catName} key={it.catName}
            >
 
             {it.catName}</option>
@@ -87,42 +97,45 @@ console.log(e.target.name)
       </select>
       <td>
         <input placeholder="Apple"  
-        name="prodName"
+        name="prodName" required
         onChange={handleChange} type="text" />
       </td>
       <td>
-        <select name="qty"  onChange={handleChange}id="cars">
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-        </select>
+   
+        <input placeholder="Apple"  
+        name="description" required
+        onChange={handleChange} type="text" />
+             
+    
       </td>
       <td>
         <input
           placeholder="199.00"
           name="price"
           type="number"
+          required
           onChange={handleChange}
         />
       </td>
 
       <td>
-        <input type="text" 
-        name="imageUrl" onChange={handleChange}/>
+        <input type="url" 
+        name="imageUrl" required onChange={handleChange}/>
       </td>
       <td>
-        <select name="status" id="cars"
+        <select name="status" id="cars" required
           onChange={handleChange}>
+             <option value="">select</option>  
           <option value="available">Available</option>
-          <option value="not available">not Available</option>
+          <option value="not available">not Available</option>        
           
         </select>
       </td>
-      <td className="btn btn-success" onClick={handleSubmit}>
-        add
+      <td className="btn btn-success" >
+       <button type="submit" onClick={handleSubmit} > add </button>
       </td>
     </tr>
+    // </form>
   );
 };
 

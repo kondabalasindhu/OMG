@@ -19,25 +19,10 @@ setCount((PrevState)=>PrevState=count+1);
       <thead>
         <tr>
           <th>
-          <Dropdown>
-        <Dropdown.Toggle variant="success">
-        category Name
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item href="#">
-            fruits
-          </Dropdown.Item>
-          <Dropdown.Item href="#">
-         fruits
-          </Dropdown.Item>
-          <Dropdown.Item href="#">
-          fruits
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+          category name
           </th>
           <th>product Name</th>
-          <th>Quantity</th>
+          <th>description</th>
           <th>price</th>
           <th>product</th>
           <th>Status</th>

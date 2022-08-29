@@ -13,3 +13,13 @@ button.btn.btn-success.rr.me-md-2 {
   background-color: rgb(39, 223, 110);
   width: 100%;
 }
+.products {
+  display: flex;
+  
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(39, 223, 110);
+  /* width: 100%; */
+  flex-wrap: wrap;
+  max-width: fit-content;
+}
