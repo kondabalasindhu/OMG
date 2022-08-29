@@ -17,6 +17,7 @@ const FORGET_API_URL = `${BASE_URL}/api/user/sendOtp`;
 const RESETPASSWORD_API_URL = `${BASE_URL}/api/verify`;
 const REG_OTP_API_URL = `${BASE_URL}/api/sendOtp`;
 const ADDGROCERY_API_URL = `${BASE_URL}/api/admin/addCategory`;
+
 //put
 
 //delete\
@@ -26,6 +27,7 @@ const PRODUCTS_LIST = `${BASE_URL}/api/admin/getAllProducts`;
 const ADD_PRODUCTS = `${BASE_URL}/api/admin/addProducts`;
 const ADD_CATEGORY = `${BASE_URL}/api/admin/getCategories`;
 const LIST_OF_PRODUCTS = `${BASE_URL}/api/admin/getAllProducts`;
+const LIST_OF_CATEGORIES = `${BASE_URL}/api/admin/getCategories`;
 
 export function auth() {
   // const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZ5YSIsImV4cCI6MTY2MDkyMDA3MywiaWF0IjoxNjYwODg0MDczfQ.k4dQfRXC5KhYfVjtihUOGLXRz1rGRlKA-XZ4BWh7_XA"
@@ -74,5 +76,8 @@ export default new (class ApiService {
   }
   listofproducts(){
     return axios.get(LIST_OF_PRODUCTS,auth());
+  }
+  listofcategories(){
+    return axios.get(LIST_OF_CATEGORIES,auth());
   }
 })();

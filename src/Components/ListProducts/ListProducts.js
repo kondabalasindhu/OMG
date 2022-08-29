@@ -8,7 +8,19 @@ import ApiServices from "../Services/ApiServices";
   
 
 function ListProducts() {
-const [data,setData]=useState({});
+const [product,SetProduct]=useState([]);
+const [status,setStatus]=useState(false);
+// useEffect(async ()=>{
+// let result =fetch("http://localhost:3000//api/admin/getAllProducts");
+// result =await (await result).json();
+// SetProduct(result)
+// },[])
+// console.warn("result",product)
+
+
+
+
+const [data,setData]=useState([]);
 //   const handleAdd=()=>{
 // setCount((PrevState)=>PrevState=count+1);
 //   }
@@ -18,11 +30,14 @@ useEffect(() => {
     .then((res) => {
       console.log(res.data);
       setData(res.data);
+      setStatus(true);
     })
-    .catch((err) => alert(err.message));
+    .catch((err) => {alert(err.message)
+      setStatus(false);
+    });
 }, []);
 
-
+console.table(data)
   return (
     <>
     <div className="tableFixHead">
@@ -32,41 +47,47 @@ useEffect(() => {
           <th>
           Category name
           </th>
-          <th>By category</th>
-          <th>category id</th>
-          <th>product id</th>
-          <th>product Name</th>
-          <th>Quantity</th>
-          <th>price</th>
-          <th>product</th>
+  
+          <th>Category id</th>
+          <th>Product id</th>
+          <th>Product Name</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Price</th>
+          
           <th>Status</th>
           <th>remarks</th>
+
         </tr>
       </thead>
-      {/* <tbody>
+        <tbody>
        
-       {count>0?<DataList/>:""} 
-       {count>1?<DataList/>:""} 
-       {count>2?<DataList/>:""}
-      </tbody> */}
-      <tbody>
-        
-{
-  data.map((it) => 
+{ data.map((item,index) =>
     {
-<td>
-  {
-    it.prodId
-  }
-</td>
+   return(
+    <tr key={index}>
+   <td>{item?.categoriesEntity?.catName}</td>
+   <td>{item?.categoriesEntity?.catId}</td>
+   <td>{item?.prodId}</td>
+   <td>{item?.prodName}</td>
+   <td><img src={item?.imageUrl} height="80" width="100" alt="product images"/></td>
+
+   <td>{item?.description}</td>
+   <td>{item?.price}</td>
+  
+   {/* <td>{item?.qty}</td> */}
+   <td>{item?.status}</td>
+  <td> <button type="button" class="btn btn-success">update</button></td>
+  
+   </tr>
+   )
+     
+       
+      
     }
   )
 }
-  
-
-
-
-      </tbody>
+     </tbody>
     </table>
  
   </div>

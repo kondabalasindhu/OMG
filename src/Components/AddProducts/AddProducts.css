@@ -3,8 +3,8 @@ table.table.table-striped.table-bordered.table-hover {
     margin-top: 23px;
 }
 .tableFixHead {
-    overflow-y: auto;
-    height: 226px !important;
+    overflow-y: scroll;
+    height:500px !important;
   }
   .tableFixHead thead th {
     position: sticky;
