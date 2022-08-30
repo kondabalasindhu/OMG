@@ -19,6 +19,7 @@ import PersonalDetails from './Components/PersonalDetails/PersonalDetails';
 import EditProfile from './Components/EditProfile/EditProfile';
 import MyCart from './Components/MyCart/MyCart';
 import  DeliveryAddress  from './Components/DeliveryAddress/DeliveryAddress';
+import Update from './Components/Update/Update';
 
 
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/EditProfile" element={<EditProfile />} />
         <Route path='/MyCart' element={<MyCart />} />
         <Route path='/DeliveryAddress' element={<DeliveryAddress />} />
+        <Route path='/Update' element={<Update />} />
       
   
       </Routes>

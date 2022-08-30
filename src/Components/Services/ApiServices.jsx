@@ -28,6 +28,7 @@ const ADD_PRODUCTS = `${BASE_URL}/api/admin/addProducts`;
 const ADD_CATEGORY = `${BASE_URL}/api/admin/getCategories`;
 const LIST_OF_PRODUCTS = `${BASE_URL}/api/admin/getAllProducts`;
 const LIST_OF_CATEGORIES = `${BASE_URL}/api/admin/getCategories`;
+const UPDATE = '${BASE_URL}/api/admin/updateProd';
 
 export function auth() {
   // const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZ5YSIsImV4cCI6MTY2MDkyMDA3MywiaWF0IjoxNjYwODg0MDczfQ.k4dQfRXC5KhYfVjtihUOGLXRz1rGRlKA-XZ4BWh7_XA"
@@ -79,5 +80,8 @@ export default new (class ApiService {
   }
   listofcategories(){
     return axios.get(LIST_OF_CATEGORIES,auth());
+  }
+  update(){
+    return axios.Axios(UPDATE,auth());
   }
 })();

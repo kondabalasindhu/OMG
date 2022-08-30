@@ -5,30 +5,27 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DataList from '../dataList/DataList';
 import { useEffect, useState } from 'react';
 import ApiServices from "../Services/ApiServices";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Update from "../Update/Update";
+
   
 
 function ListProducts() {
+  
+    // const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [show, setShow] = useState(false);
 const [product,SetProduct]=useState([]);
 const [status,setStatus]=useState(false);
-// useEffect(async ()=>{
-// let result =fetch("http://localhost:3000//api/admin/getAllProducts");
-// result =await (await result).json();
-// SetProduct(result)
-// },[])
-// console.warn("result",product)
-
-
-
-
 const [data,setData]=useState([]);
-//   const handleAdd=()=>{
-// setCount((PrevState)=>PrevState=count+1);
-//   }
-//   console.log(count)
+const [updatedata,setUpdateData]=useState();
+
 useEffect(() => {
   ApiServices.listofproducts()
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setData(res.data);
       setStatus(true);
     })
@@ -37,9 +34,19 @@ useEffect(() => {
     });
 }, []);
 
-console.table(data)
+// console.table(data)
   return (
     <>
+    <Modal show={show} onHide={() => setShow(false)} size="xl">
+        <Modal.Header closeButton>
+          <Modal.Title  id="example-custom-modal-styling-title">
+            {/* Custom Modal Styling */}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Update  data={updatedata}/>
+        </Modal.Body>
+      </Modal>
     <div className="tableFixHead">
     <table>
       <thead>
@@ -77,12 +84,15 @@ console.table(data)
   
    {/* <td>{item?.qty}</td> */}
    <td>{item?.status}</td>
-  <td> <button type="button" class="btn btn-success">update</button></td>
+   
+  <td> <button type="button" variant="primary" class="btn btn-success" onClick={() => {
+    setUpdateData(item)
+    setShow(true)}}>update</button>
+  
+  </td>
   
    </tr>
-   )
-     
-       
+   )   
       
     }
   )
@@ -91,9 +101,10 @@ console.table(data)
     </table>
  
   </div>
-  {/* <button className="btn btn-success" onClick={handleAdd}>Add Row</button> */}
   </>
   );
 }
 
 export default ListProducts;
+
+
