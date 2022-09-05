@@ -43,3 +43,25 @@ a.logout.nav-link {
     text-align: center !important;
     font-size: 35px;
 }
+button.Addgro {
+    position: absolute;
+    margin-left: 398px;
+    margin-top: 53px;
+    padding-top: 43px;
+}
+a.Addgro.btn {
+    position: absolute;
+    margin-left: 411px;
+    margin-top: 42px;
+    border-color: black;
+    padding-top: 56px;
+}
+
+
+
+
+
+
+
+
+

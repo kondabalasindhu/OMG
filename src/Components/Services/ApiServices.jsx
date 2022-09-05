@@ -31,6 +31,9 @@ const LIST_OF_CATEGORIES = `${BASE_URL}/api/admin/getCategories`;
 const UPDATE = `${BASE_URL}/api/admin/updateProd`;
 const GET_ONE_PRODUCT = `${BASE_URL}/api/admin/getProdByProdName?prodName=banana`;
 
+//admin dashboard
+const INVENTORY = `${BASE_URL}/api/admin/getAllInventory`;
+
 export function auth() {
   // const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZ5YSIsImV4cCI6MTY2MDkyMDA3MywiaWF0IjoxNjYwODg0MDczfQ.k4dQfRXC5KhYfVjtihUOGLXRz1rGRlKA-XZ4BWh7_XA"
   const token = sessionStorage.getItem("Access_Token");
@@ -83,9 +86,14 @@ export default new (class ApiService {
     return axios.get(LIST_OF_CATEGORIES,auth());
   }
   update(data){
-    return axios.post(UPDATE,data,auth());
+    return axios.put(UPDATE,data,auth());
   }
 getoneproduct(){
   return axios.get(GET_ONE_PRODUCT,auth());
 }
+//admin
+inventory(){
+  return axios.get(INVENTORY,auth());
+}
+
 })();

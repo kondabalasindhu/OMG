@@ -20,6 +20,7 @@ import EditProfile from './Components/EditProfile/EditProfile';
 import MyCart from './Components/MyCart/MyCart';
 import  DeliveryAddress  from './Components/DeliveryAddress/DeliveryAddress';
 import Update from './Components/Update/Update';
+import Inventory from './Components/Inventory/Inventory';
 
 
 
@@ -52,6 +53,7 @@ function App() {
         <Route path='/MyCart' element={<MyCart />} />
         <Route path='/DeliveryAddress' element={<DeliveryAddress />} />
         <Route path='/Update' element={<Update />} />
+        <Route path='/Inventory' element={<Inventory />} />
       
   
       </Routes>
