@@ -12,7 +12,7 @@ function Update({data}) {
   const [categorylist, setcategorylist] = useState([]);
   const [errors, setErrors] = useState(false);
   const [status, setStatus] = useState(false);
-  const [datas, setDatas] = useState({});
+  const [datas, setDatas] = useState({...data});
 const [count,setCount]=useState(1);
   const handleAdd=()=>{
 setCount((PrevState)=>PrevState=count+1);
@@ -39,16 +39,16 @@ setCount((PrevState)=>PrevState=count+1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log( datas );
-    ApiServices.addproducts(datas)
-      .then((res) => {
+    console.log( datas );
+    ApiServices.update(datas) 
+    .then((res) => {
         console.log(res.data);
         setErrors(false);
         alert("product added");
         // navigate("/");
       })
       .catch((error) => {
-        // alert("something went wrong ");
+         alert("something went wrong ");
         setErrors(true);
         console.log(error);
       });
@@ -68,7 +68,7 @@ setCount((PrevState)=>PrevState=count+1);
           <th>product Name</th>
           <th>description</th>
           <th>price</th>
-          <th>product</th>
+          <th>Image</th>
           <th>Status</th>
           <th>remarks</th>
         </tr>
@@ -138,7 +138,7 @@ setCount((PrevState)=>PrevState=count+1);
         </select>
       </td>
       <td className="btn btn-success" >
-       <button type="submit" onClick={handleSubmit} > add </button>
+       <button type="submit" onClick={handleSubmit} >Update </button>
       </td>
     </tr> )}
     {!data&&(
