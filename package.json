@@ -19,6 +19,7 @@
     "react-draggable": "^4.4.5",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-switch-selector": "^2.2.1",
     "react-ui-cards": "^3.0.0",
     "react-virtualized": "^9.22.3",
     "save": "^2.5.0",

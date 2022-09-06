@@ -99,12 +99,7 @@ function Registration() {
         onChange={handleChange}
       />
     </div>
-    {/* <Row className="mb-3">      
-      <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>UserName</Form.Label>
-         <Form.Control type="text" placeholder="Enter UserName" />
-     </Form.Group>
-</Row> */}
+   
 <Row className="mb-3"> 
               <Form.Group as={Col} >
                 <Form.Label htmlFor="UserName">UserName</Form.Label>
