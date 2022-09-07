@@ -1,17 +1,16 @@
-import React from 'react'
-import { Carousel } from 'react-bootstrap'
+import React from "react";
+import { Carousel } from "react-bootstrap";
 import test4 from "./test4.jpg";
 import test5 from "./test5.jpg";
 // import test2 from "./test2.jpg";
 const Carsouel = () => {
   return (
-    
     <Carousel variant="dark">
       <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
-          style={{maxHeight: "500px",objectFit: "contain"}}
-        //   style={{height:"725px"}}
+          style={{ maxHeight: "500px", objectFit: "contain" }}
+          //   style={{height:"725px"}}
           src={test4}
           alt="First slide"
         />
@@ -23,7 +22,7 @@ const Carsouel = () => {
       <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
-          style={{maxHeight: "500px",objectFit: "contain"}}
+          style={{ maxHeight: "500px", objectFit: "contain" }}
           src={test5}
           alt="Second slide"
         />
@@ -35,7 +34,7 @@ const Carsouel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          style={{maxHeight: "500px",objectFit: "contain"}}
+          style={{ maxHeight: "500px", objectFit: "contain" }}
           src={test4}
           alt="Third slide"
         />
@@ -47,7 +46,7 @@ const Carsouel = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  )
-}
+  );
+};
 
-export default Carsouel
+export default Carsouel;

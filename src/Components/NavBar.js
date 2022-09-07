@@ -13,7 +13,7 @@ import LOGO2 from "./LOGO2.PNG";
 
 const NavBar = () => {
   const token = sessionStorage.getItem("Access_Token");
-  console.log(token)
+  console.log(token);
   return (
     <Navbar
       bg="green"
@@ -41,7 +41,7 @@ const NavBar = () => {
               <Button variant="outline-success">Search</Button>
             </Form>
             <Nav.Link as={Link} to="/login">
-              {token?"Logout":"Login"}
+              {token ? "Logout" : "Login"}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

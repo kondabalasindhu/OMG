@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Container, Modal, Nav, Navbar
-} from "react-bootstrap";
+import { Button, Container, Modal, Nav, Navbar } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import AddGrocery from "../AddGrocery/AddGrocery";
 import Micro from "../Images/Micro.png";
@@ -12,15 +9,11 @@ import "./Admin.css";
 function Admin() {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  
-  const handlelogout=()=>
-  {
+
+  const handlelogout = () => {
     sessionStorage.clear();
-    navigate("/login")
-  }
-  
-
-
+    navigate("/login");
+  };
 
   return (
     <>
@@ -31,12 +24,12 @@ function Admin() {
       >
         <Container fluid>
           <Navbar.Brand href="/">
-            <img src={Micro} alt="logo"className="logoMicro" />
+            <img src={Micro} alt="logo" className="logoMicro" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <p className="hero">Welcome to ADMIN Dashboard</p>
-            <Nav.Link  onClick={handlelogout} className="logout">
+            <Nav.Link onClick={handlelogout} className="logout">
               Logout
             </Nav.Link>
           </Navbar.Collapse>
@@ -61,7 +54,7 @@ function Admin() {
         >
           AddGrocery
         </button>
-         {/* <button
+        {/* <button
           className="Addgro"
           style={{ backgroundImage: `url(${testt})` }}
           // onClick={() => setInvest(!invest)}
@@ -69,9 +62,15 @@ function Admin() {
          Inventory
         </button> */}
 
-        <Button as= {Link} to="/Inventory" variant="" className="Addgro" style={{ backgroundImage: `url(${testt})` }} >
-              Inventory
-            </Button>
+        <Button
+          as={Link}
+          to="/Inventory"
+          variant=""
+          className="Addgro"
+          style={{ backgroundImage: `url(${testt})` }}
+        >
+          Inventory
+        </Button>
         <img src={testt} alt="logo" className="imgrr" />
       </div>
     </>

@@ -20,13 +20,10 @@ function AddGrocery() {
   const [errors, setErrors] = useState(false);
   const [status, setStatus] = useState(false);
 
-
-  
-
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
-   
+
     setDatas((prevState) => ({
       ...prevState,
       [name]: value,

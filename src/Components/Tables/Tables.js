@@ -11,7 +11,7 @@ const classes = {
   tableRow: "ReactVirtualizedDemo-tableRow",
   tableRowHover: "ReactVirtualizedDemo-tableRowHover",
   tableCell: "ReactVirtualizedDemo-tableCell",
-  noClick: "ReactVirtualizedDemo-noClick"
+  noClick: "ReactVirtualizedDemo-noClick",
 };
 
 const styles = ({ theme }) => ({
@@ -19,44 +19,44 @@ const styles = ({ theme }) => ({
   // https://github.com/bvaughn/react-virtualized/issues/454
   "& .ReactVirtualized__Table__headerRow": {
     ...(theme.direction === "rtl" && {
-      paddingLeft: "0 !important"
+      paddingLeft: "0 !important",
     }),
     ...(theme.direction !== "rtl" && {
-      paddingRight: undefined
-    })
+      paddingRight: undefined,
+    }),
   },
   [`& .${classes.flexContainer}`]: {
     display: "flex",
     alignItems: "center",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
   },
   [`& .${classes.tableRow}`]: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   [`& .${classes.tableRowHover}`]: {
     "&:hover": {
-      backgroundColor: theme.palette.grey[200]
-    }
+      backgroundColor: theme.palette.grey[200],
+    },
   },
   [`& .${classes.tableCell}`]: {
-    flex: 1
+    flex: 1,
   },
   [`& .${classes.noClick}`]: {
-    cursor: "initial"
-  }
+    cursor: "initial",
+  },
 });
 
 class MuiVirtualizedTable extends React.PureComponent {
   static defaultProps = {
     headerHeight: 48,
-    rowHeight: 48
+    rowHeight: 48,
   };
 
   getRowClassName = ({ index }) => {
     const { onRowClick } = this.props;
 
     return clsx(classes.tableRow, classes.flexContainer, {
-      [classes.tableRowHover]: index !== -1 && onRowClick != null
+      [classes.tableRowHover]: index !== -1 && onRowClick != null,
     });
   };
 
@@ -66,7 +66,7 @@ class MuiVirtualizedTable extends React.PureComponent {
       <TableCell
         component="div"
         className={clsx(classes.tableCell, classes.flexContainer, {
-          [classes.noClick]: onRowClick == null
+          [classes.noClick]: onRowClick == null,
         })}
         variant="body"
         style={{ height: rowHeight }}
@@ -111,7 +111,7 @@ class MuiVirtualizedTable extends React.PureComponent {
             width={width}
             rowHeight={rowHeight}
             gridStyle={{
-              direction: "inherit"
+              direction: "inherit",
             }}
             headerHeight={headerHeight}
             {...tableProps}
@@ -124,7 +124,7 @@ class MuiVirtualizedTable extends React.PureComponent {
                   headerRenderer={(headerProps) =>
                     this.headerRenderer({
                       ...headerProps,
-                      columnIndex: index
+                      columnIndex: index,
                     })
                   }
                   className={classes.flexContainer}
@@ -147,12 +147,12 @@ MuiVirtualizedTable.propTypes = {
       dataKey: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       numeric: PropTypes.bool,
-      width: PropTypes.number.isRequired
+      width: PropTypes.number.isRequired,
     })
   ).isRequired,
   headerHeight: PropTypes.number,
   onRowClick: PropTypes.func,
-  rowHeight: PropTypes.number
+  rowHeight: PropTypes.number,
 };
 
 const VirtualizedTable = styled(MuiVirtualizedTable)(styles);
@@ -175,56 +175,53 @@ const rows = [
   {
     id: 1,
     dessert: "catID001",
-    calories: "fruits"
+    calories: "fruits",
   },
   {
     id: 2,
     dessert: "catID002",
-    calories: "vegetables"
+    calories: "vegetables",
   },
   {
     id: 2,
     dessert: "catID003",
-    calories: "oils"
+    calories: "oils",
   },
   {
     id: 2,
     dessert: "catID004",
-    calories: "rice"
+    calories: "rice",
   },
   {
     id: 2,
     dessert: "catID005",
-    calories: "spices"
+    calories: "spices",
   },
   {
     id: 2,
     dessert: "catID006",
-    calories: "diary products"
+    calories: "diary products",
   },
   {
     id: 2,
     dessert: "catID007",
-    calories: "meat"
-  }
-  ,
+    calories: "meat",
+  },
   {
-    id:2,
-    dessert:"catID008",
-    calories:"others"
-  }
-  ,
+    id: 2,
+    dessert: "catID008",
+    calories: "others",
+  },
   {
-    id:2,
-    dessert:"catID009",
-    calories:"10g"
-  }
-  ,
+    id: 2,
+    dessert: "catID009",
+    calories: "10g",
+  },
   {
-    id:2,
-    dessert:"ytdc",
-    calories:"10g"
-  }
+    id: 2,
+    dessert: "ytdc",
+    calories: "10g",
+  },
 ];
 
 // for (let i = 0; i <10; i += 1) {
@@ -247,16 +244,14 @@ export default function ReactVirtualizedTable() {
           {
             width: 200,
             label: "category id",
-            dataKey: "dessert"
+            dataKey: "dessert",
           },
           {
             width: 120,
             label: "Category Name",
             dataKey: "calories",
-            numeric: true
+            numeric: true,
           },
-          
-
         ]}
       />
     </Paper>

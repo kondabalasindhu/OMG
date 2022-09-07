@@ -187,7 +187,7 @@ const MyAccount = () => {
                   <p>ITEM DESCRIPTION</p>
                   <p className="UNIT"></p>
                   <p className="reddy">
-                <p className="reddy2"></p>
+                    <p className="reddy2"></p>
                   </p>
                 </div>
               </div>
